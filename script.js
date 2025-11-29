@@ -18,38 +18,41 @@ changeColorFirstCardButton.addEventListener('click',() => {
 firstProductCard.style.backgroundColor = blueColorHash;
 })
 
-const openGoogleButton = document.querySelector('#openGoogle');
+const openGoogleButton = document.querySelector('#open-google');
 openGoogleButton.addEventListener('click',openGoogle)
 function openGoogle() {
     const answer = confirm('Вы действительно хотите открыть Google?');
 
     if (answer === true) {
         window.open('https://google.com')
-    }else{
+    } else {
         return;
     }
 }
 
-const mainTitle = document.querySelector('.main-title');
-mainTitle.addEventListener('mouseenter', function() {
-
-});
-const content = mainTitle.textContent;
-console.log(content);
-
-const button = document.getElementById('colorToggleButton');
-
-
-const colorOneRGB = 'rgb(52, 152, 219)';
-const colorTwoRGB = 'rgb(231, 76, 60)'; 
-
-button.style.backgroundColor = colorOneRGB;
-
-button.addEventListener('click', function() {
+const toggleButton = document.getElementById('color-toggle-button');
+if (toggleButton) {
     
-    if (button.style.backgroundColor === colorOneRGB) {
-        button.style.backgroundColor = colorTwoRGB;
-    } else {
-        button.style.backgroundColor = colorOneRGB;
-    }
-});
+    toggleButton.classList.add('btn-style');
+    
+    toggleButton.classList.add('color-one');
+
+    toggleButton.addEventListener('click', function() {
+        
+        this.classList.toggle('color-one');
+        this.classList.toggle('color-two');
+    });
+} else {
+    console.error("Кнопка с ID 'color-toggle-button' не найдена.");
+}
+
+const mainTitleButton = document.getElementById('main-title-button');
+const mainTitleElement = document.querySelector('.main-title'); 
+
+if (mainTitleButton && mainTitleElement) {
+    mainTitleButton.addEventListener('click', function() {
+        const titleText = mainTitleElement.textContent;
+        console.log("--- Вывод в консоль по нажатию кнопки ---");
+        console.log(titleText);
+          });
+}
