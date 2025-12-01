@@ -4,6 +4,7 @@ const greenColorHash = '#00ff00'
 const blueColorHash = '#0000FF'
  
 
+ 
 changeColorAllCardButton.addEventListener('click',() => {
 productCard.forEach((card) => card.style.backgroundColor = greenColorHash)
 })
@@ -31,7 +32,7 @@ function openGoogle() {
 }
 
 const toggleButton = document.getElementById('color-toggle-button');
-if (toggleButton) {
+{
     
     toggleButton.classList.add('btn-style');
     
@@ -42,17 +43,14 @@ if (toggleButton) {
         this.classList.toggle('color-one');
         this.classList.toggle('color-two');
     });
-} else {
-    console.error("Кнопка с ID 'color-toggle-button' не найдена.");
+
 }
 
 const mainTitleButton = document.getElementById('main-title-button');
-const mainTitleElement = document.querySelector('.main-title'); 
+const mainTitleElement = document.querySelector('.main-title');
 
 if (mainTitleButton && mainTitleElement) {
-    mainTitleButton.addEventListener('click', function() {
-        const titleText = mainTitleElement.textContent;
-        console.log("--- Вывод в консоль по нажатию кнопки ---");
-        console.log(titleText);
-          });
+    mainTitleButton.addEventListener('click', () => {
+    console.log(mainTitleElement.textContent);
+    });
 }
