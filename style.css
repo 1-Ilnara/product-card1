@@ -110,12 +110,14 @@
     cursor: pointer;
 }
 
-.color-one {
-    background-color: blue;
+.text-white {
     color: white;
 }
 
-.color-two {
+.bg-blue {
+    background-color: blue;
+}
+
+.bg-red {
     background-color: red;
-    color: white;
 }

@@ -32,25 +32,19 @@ function openGoogle() {
 }
 
 const toggleButton = document.getElementById('color-toggle-button');
-{
-    
-    toggleButton.classList.add('btn-style');
-    
-    toggleButton.classList.add('color-one');
 
-    toggleButton.addEventListener('click', function() {
-        
-        this.classList.toggle('color-one');
-        this.classList.toggle('color-two');
-    });
+toggleButton.classList.add('btn-style', 'text-white', 'bg-blue');
 
-}
+toggleButton.addEventListener('click', function() {
+    this.classList.toggle('bg-blue');
+    this.classList.toggle('bg-red');
+});
 
 const mainTitleButton = document.getElementById('main-title-button');
 const mainTitleElement = document.querySelector('.main-title');
 
 if (mainTitleButton && mainTitleElement) {
     mainTitleButton.addEventListener('click', () => {
-    console.log(mainTitleElement.textContent);
+        console.log(mainTitleElement.textContent);
     });
 }
