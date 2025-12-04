@@ -102,3 +102,22 @@
     font-size: 20px;
     line-height: 24px;
 }
+
+
+.btn-style {
+    padding: 10px;
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+.text-white {
+    color: white;
+}
+
+.bg-blue {
+    background-color: blue;
+}
+
+.bg-red {
+    background-color: red;
+}
