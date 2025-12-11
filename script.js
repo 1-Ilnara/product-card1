@@ -3,8 +3,6 @@ const changeColorAllCardButton = document.querySelector('#change-color-all-card-
 const greenColorHash = '#00ff00'
 const blueColorHash = '#0000FF'
  
-
- 
 changeColorAllCardButton.addEventListener('click',() => {
 productCard.forEach((card) => card.style.backgroundColor = greenColorHash)
 })
