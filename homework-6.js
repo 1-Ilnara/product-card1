@@ -30,7 +30,7 @@ carInfo.owner = personalInfo;
 console.log("объект с вложенным владельцем:", carInfo);
 
 function addMaxSpeedIfMissing(carObject) { 
-    if (carObject.maxSpeed === undefined) {
+    if (!carObject.maxSpeed) {
         console.log("Добавляю максимальную скорость..."); 
         carObject.maxSpeed = 250; 
     } else {
@@ -46,7 +46,6 @@ addMaxSpeedIfMissing(carInfo);
 //Задание 6
 
 function displayObjectProperty(obj, propName) {
-    
     console.log(`Значение свойства "${propName}":`, obj[propName]);
 }
 
@@ -66,6 +65,7 @@ console.log(productNames[0]);
 console.log(productNames[1]); 
 
 //Задание 8
+
 const bookCatalog = [
     {
         title: "Квантовый воин",
@@ -105,17 +105,15 @@ console.log(bookCatalog);
 //Задание 9
 
 const generalCatalog = [
-    { title: "Квантовый воин", author: "Джон Кехо", year: 2020, genre: "Саморазвитие" },
-    { title: "Путешествие домой", author: "Ли Кэрролл", year: 2012, genre: "Эзотерика" },
-    { title: "Интуиция", author: "Ошо", year: 2021, genre: "Философия" },
+{ title: "Квантовый воин", author: "Джон Кехо", year: 2020, genre: "Саморазвитие" },
+{ title: "Путешествие домой", author: "Ли Кэрролл", year: 2012, genre: "Эзотерика" },
+{ title: "Интуиция", author: "Ошо", year: 2021, genre: "Философия" },
 ];
 
 const harryPotterCatalog = [
-    { title: "Гарри Поттер и Философский камень", author: "Джоан Роулинг", year: 1997, universe: "Harry Potter" },
-    { title: "Гарри Поттер и Тайная комната", author: "Джоан Роулинг", year: 1998, universe: "Harry Potter" },
+{ title: "Гарри Поттер и Философский камень", author: "Джоан Роулинг", year: 1997, universe: "Harry Potter" },
+{ title: "Гарри Поттер и Тайная комната", author: "Джоан Роулинг", year: 1998, universe: "Harry Potter" },
 ];
-
-
 
 // Задание 10
 
@@ -126,14 +124,14 @@ console.log(combinedCatalog);
 console.log("Общее количество книг:", combinedCatalog.length); 
 
 
-
 function markRareBooks(booksArray) {
+    
     const updatedCatalog = booksArray.map(book => {
-        const isItRare = book.year > 2000;
-        return {...book, isRare: isItRare};
+        return {...book, isRare: book.year > 2000 };
     });
         return updatedCatalog;
 }
+
 const finalCatalogWithRarity = markRareBooks(combinedCatalog);
 
 console.log("\n--- Результат Задания 10 (Каталог с пометкой о редкости) ---");
