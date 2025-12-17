@@ -1,25 +1,23 @@
 //Задание 2
 
-const numbers = [1,2,3,4,5,6,7,8,9,10];
-const filteredNumbers = numbers.filter(num => {
-    return num >= 5; 
-});
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const filteredNumbers = numbers.filter(num => num >= 5);
 
 console.log(numbers);
 console.log("(>= 5):", filteredNumbers);
 
 //Задание 3
 
-const movies = [ "Последний Самурай", "Джон Уик", "Аватар"];
+const movies = ["Последний Самурай", "Джон Уик", "Аватар"];
 const movieToFind = "Аватар";
-const movieNotFound = "Анету";
 
 const isInCatalog = movies.includes(movieToFind);
-const isAvatarInCatalog = movies.includes(movieNotFound);
 
-console.log(`Фильм "${movieToFind}" в каталоге?`, isInCatalog);
-console.log(`Фильм "${movieNotFound}" в каталоге?`, isAvatarInCatalog); 
-
+if (isInCatalog) {
+    console.log(`Фильм "${movieToFind}" найден в каталоге.`);
+} else {
+    console.log(`Фильм "${movieToFind}" отсутствует.`);
+}
 //Задание 4
 
 function reverseArray(arrayToReverse) {
@@ -41,27 +39,25 @@ console.log(socialMediaComments.length);
 
 //Задание 7
 
-const commentsWithComEmail = socialMediaComments.filter(comment => {
-    return comment.email.includes(".com");
-});
+const commentsWithComEmail = socialMediaComments.filter(comment => comment.email.includes(".com"));
 
 console.log(commentsWithComEmail);
 
 //Задание 8
 
-const updatedCommentsPostId = socialMediaComments.map(comment => {
-    const newPostId = comment.id <= 5 ? 2 : 1;
-    return { ...comment, postId: newPostId
-    };
-});
+const updatedCommentsPostId = socialMediaComments.map(comment => ({
+    ...comment,
+    postId: comment.id <= 5 ? 2 : 1
+}));
 
 console.log(updatedCommentsPostId);
 
 //Задание 9
 
-const simplifiedComments = socialMediaComments.map(comment => {
-    return { id: comment.id,name: comment.name };
-});
+const simplifiedComments = socialMediaComments.map(comment => ({
+    id: comment.id,
+    name: comment.name
+}));
 
 console.log(simplifiedComments);
 
@@ -69,20 +65,17 @@ console.log(simplifiedComments);
 
 console.log("--- (Проверка длины сообщения) ---");
 
-const commentsWithValidation = socialMediaComments.map(comment => {
-    const isLongMessage = comment.body.length > 180;
-    return {...comment, isInvalid: isLongMessage };
-});
+const commentsWithValidation = socialMediaComments.map(comment => ({
+    ...comment, 
+    isInvalid: comment.body.length > 180 
+}));
 
 console.log(commentsWithValidation);
-
-console.log(commentsWithValidation[0].isInvalid); 
+console.log(commentsWithValidation[0].isInvalid);
 
 //Задание 11
 
-const emailsMap = socialMediaComments.map(comment => {
-    return comment.email;
-});
+const emailsMap = socialMediaComments.map(comment => comment.email);
 
 console.log(emailsMap);
 
