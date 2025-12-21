@@ -1,28 +1,21 @@
 import { products } from "./products.js";
 
-const createProductTemplate = ({
-  img,
-  title,
-  category,
-  description,
-  composition,
-  price,
-}) => {
-  const list = composition.map((item) => `<li>${item}</li>`).join("");
-
-  return `
-    <div class="card-container">
-      <img src="images/${img}" alt="${title}" width="290" height="245" />
-      <span class="product-category">${category}</span>
-      <h3 class="product-name">${title}</h3>
-      <p class="product-description">${description}</p>
-      <span class="composition-title">Состав:</span>
-      <ul class="product-composition-list">${list}</ul>
-      <div class="product-price-container">
-        <span class="price-label">Цена</span>
-        <span class="price-value">${price.toLocaleString()} &#x20BD;</span>
-      </div>
-    </div>
+const createProductTemplate = (product) => {
+  return ` 
+    <div class="card-container"> 
+      <img src="images/${product.img}.png" alt="${product.title}" width="290" height="245" /> 
+      <span class="product-category">${product.category}</span> 
+      <h3 class="product-name">${product.title}</h3> 
+      <p class="product-description">${product.description}</p> 
+      <span class="composition-title">Составить:</span> 
+      <ul class="product-composition-list"> 
+      ${product.composition.map((item) => `<li>${item}</li>`).join("")} 
+      </ul> 
+      <div class="product-price-container"> 
+        <span class="price-label">Цена</span> 
+        <span class="price-value">${product.price.toLocaleString()} ₽</span> 
+      </div> 
+    </div> 
   `;
 };
 
@@ -37,8 +30,13 @@ const renderCards = (cardsArray, count) => {
 };
 
 const getCardsCount = () => {
-  const count = parseInt(prompt("Сколько карточек отрисовать? (От 1 до 5)"));
-  return count >= 1 && count <= 5 ? count : (alert("Ошибка ввода"), 0);
+  const input = prompt("Сколько карточек отрисовать? (От 1 до 5)");
+  const count = parseInt(input);
+  if (isNaN(count) || count < 1 || count > 5) {
+    alert("Ошибка ввода. Введите число от 1 до 5");
+    return 0;
+  }
+  return count;
 };
 
 const countToDisplay = getCardsCount();
@@ -47,4 +45,4 @@ if (countToDisplay > 0) {
 }
 
 const productDescriptions = products.map((p) => ({ [p.title]: p.description }));
-console.log("Описания:", productDescriptions);
+console.log("Описания продуктов:", productDescriptions);
