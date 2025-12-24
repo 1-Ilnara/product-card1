@@ -1,48 +1,57 @@
 import { products } from "./products.js";
+function renderCards(cardsArray) {
+  const template = document.getElementById("product-template");
+  const container = document.getElementById("product-list");
 
-const createProductTemplate = (product) => {
-  return ` 
-    <div class="card-container"> 
-      <img src="images/${product.img}.png" alt="${product.title}" width="290" height="245" /> 
-      <span class="product-category">${product.category}</span> 
-      <h3 class="product-name">${product.title}</h3> 
-      <p class="product-description">${product.description}</p> 
-      <span class="composition-title">Составить:</span> 
-      <ul class="product-composition-list"> 
-      ${product.composition.map((item) => `<li>${item}</li>`).join("")} 
-      </ul> 
-      <div class="product-price-container"> 
-        <span class="price-label">Цена</span> 
-        <span class="price-value">${product.price.toLocaleString()} ₽</span> 
-      </div> 
-    </div> 
-  `;
-};
+  if (!template || !container) return;
 
-const renderCards = (cardsArray, count) => {
-  const container = document.querySelector(".cards-container-box");
-  if (!container) return;
+  container.innerHTML = "";
 
-  container.innerHTML = cardsArray
-    .slice(0, count)
-    .map(createProductTemplate)
-    .join("");
-};
+  cardsArray.forEach((product) => {
+    const clone = template.content.cloneNode(true);
 
-const getCardsCount = () => {
-  const input = prompt("Сколько карточек отрисовать? (От 1 до 5)");
-  const count = parseInt(input);
-  if (isNaN(count) || count < 1 || count > 5) {
-    alert("Ошибка ввода. Введите число от 1 до 5");
-    return 0;
-  }
-  return count;
-};
+    const img = clone.querySelector(".product-img");
+    img.src = `images/${product.img}.png`;
+    img.alt = product.name;
 
-const countToDisplay = getCardsCount();
-if (countToDisplay > 0) {
-  renderCards(products, countToDisplay);
+    clone.querySelector(".product-category").textContent = product.category;
+    clone.querySelector(".product-name").textContent = product.name;
+    clone.querySelector(".product-description").textContent =
+      product.description;
+
+    const compositionList = clone.querySelector(".product-composition-list");
+    compositionList.innerHTML = "";
+
+    product.composition.forEach((item) => {
+      const li = document.createElement("li");
+      li.textContent = item;
+      li.classList.add("composition-item");
+      compositionList.appendChild(li);
+    });
+
+    const priceElem = clone.querySelector(".product-price");
+    priceElem.textContent = `${product.price.toLocaleString()} ₽`;
+
+    container.appendChild(clone);
+  });
 }
 
-const productDescriptions = products.map((p) => ({ [p.title]: p.description }));
-console.log("Описания продуктов:", productDescriptions);
+const countToDisplay = getQuantityFromUser();
+renderCards(products.slice(0, countToDisplay));
+
+const productDescriptionsMap = products.reduce((acc, product) => {
+  acc[product.name] = product.description;
+  return acc;
+}, {});
+console.log("Словарь описаний:", productDescriptionsMap);
+
+function getQuantityFromUser() {
+  const input = prompt("Сколько карточек отобразить? От 1 до 5");
+  const quantity = parseInt(input);
+
+  if (quantity >= 1 && quantity <= 5) {
+    return quantity;
+  }
+  alert("Некорректный ввод. Будут показаны все 5 карточек.");
+  return 5;
+}
