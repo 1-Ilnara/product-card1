@@ -36,7 +36,7 @@ export const products = [
   },
   {
     id: 4,
-    img: "gift-set-1",
+    img: "gift-set 1",
     category: "для нормальной кожи",
     name: "Подарочный набор №1",
     description: "Набор, состоящий из увлажняющего крема и маски.",
@@ -46,7 +46,7 @@ export const products = [
   },
   {
     id: 5,
-    img: "gift-set-5",
+    img: "gift-set 5",
     category: "для нормальной кожи",
     name: "Подарочный набор №5",
     description:
