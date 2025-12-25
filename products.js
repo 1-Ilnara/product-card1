@@ -18,7 +18,11 @@ export const products = [
     name: "Увлажняющая маска",
     category: "для нормальной кожи",
     description: "Способствует удерживанию влаги в верхних слоях кожи.",
-    composition: ["воски", "минералы", "масла"],
+    composition: [
+      "воски",
+       "минералы", 
+       "масла"
+      ],
     price: 3500,
   },
   {
@@ -36,22 +40,30 @@ export const products = [
   },
   {
     id: 4,
-    img: "gift-set 1",
+    img: "gift-set-1",
     category: "для нормальной кожи",
     name: "Подарочный набор №1",
     description: "Набор, состоящий из увлажняющего крема и маски.",
-    composition: ["воски", "минералы", "масла"],
+    composition: [
+      "воски", 
+      "минералы", 
+      "масла"
+    ],
 
     price: 4750,
   },
   {
     id: 5,
-    img: "gift-set 5",
+    img: "gift-set-5",
     category: "для нормальной кожи",
     name: "Подарочный набор №5",
     description:
       "Весь набор средств Invisible Symphony: крем, маска, мусс и гель для умывания.",
-    composition: ["воски", "минералы", "масла"],
+    composition: [
+      "воски", 
+      "минералы", 
+      "масла"
+    ],
     price: 7520,
   },
 ];

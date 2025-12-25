@@ -1,9 +1,8 @@
 import { products } from "./products.js";
+
 function renderCards(cardsArray) {
   const template = document.getElementById("product-template");
   const container = document.getElementById("product-list");
-
-  if (!template || !container) return;
 
   container.innerHTML = "";
 
