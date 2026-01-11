@@ -29,8 +29,7 @@ function renderCards(cardsArray) {
 
     clone.querySelector(".product-category").textContent = product.category;
     clone.querySelector(".product-name").textContent = product.name;
-    clone.querySelector(".product-description").textContent =
-      product.description;
+    clone.querySelector(".product-description").textContent = product.description;
 
     const compositionList = clone.querySelector(".product-composition-list");
     product.composition.forEach((item) => {
