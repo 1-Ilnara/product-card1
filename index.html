@@ -11,28 +11,28 @@
     />
   </head>
   <body>
-    <button id="openModal">Зарегистрироваться</button>
-    <div id="registrationModal" class="modal" aria-hidden="true">
-      <div class="modal-content">
-        <span class="close">&times;</span>
-        <h2>Регистрация</h2>
-        <form id="registrationForm">
-          <label for="firstName">Имя:</label>
-          <input type="text" id="firstName" name="firstName" placeholder="Введите имя" required/>
-          <label for="lastName">Фамилия:</label>
-          <input type="text" id="lastName" name="lastName" placeholder="Введите фамилию" required/>
-          <label for="dob">Дата рождения:</label>
-          <input type="date" id="dob" name="dob" required />
-          <label for="login">Логин:</label>
-          <input type="text" id="login" name="login" placeholder="Придумайте логин" required minlength="4" autocomplete="username">
-          <label for="password">Пароль:</label>
-          <input type="password" id="password" name="password" placeholder="Введите пароль" required minlength="6" autocomplete="new-password">
-          <label for="confirmPassword">Повторите пароль:</label>
-          <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Повторите пароль" required autocomplete="new-password">
-          <button type="submit">Отправить</button>
-        </form>
-      </div>
-    </div>
+    <button id="open-modal">Зарегистрироваться</button>
+<div id="registration-modal" class="modal" aria-hidden="true">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Регистрация</h2>
+    <form id="registration-form">
+      <label for="first-name">Имя:</label>
+      <input type="text" id="first-name" name="first-name" placeholder="Введите имя" required/>
+      <label for="last-name">Фамилия:</label>
+      <input type="text" id="last-name" name="last-name" placeholder="Введите фамилию" required/>
+      <label for="dob">Дата рождения:</label>
+      <input type="date" id="dob" name="dob" required />
+      <label for="login">Логин:</label>
+      <input type="text" id="login" name="login" placeholder="Придумайте логин" required minlength="4" autocomplete="username">
+      <label for="password">Пароль:</label>
+      <input type="password" id="password" name="password" placeholder="Введите пароль" required minlength="6" autocomplete="new-password">
+      <label for="confirm-password">Повторите пароль:</label>
+      <input type="password" id="confirm-password" name="confirm-password" placeholder="Повторите пароль" required autocomplete="new-password">
+      <button type="submit">Отправить</button>
+    </form>
+  </div>
+</div>
 
     <footer class="site-footer">
       <div class="footer-container">
@@ -42,18 +42,18 @@
             У нас Самые Лучшие Продукты Для кожи
           </p>
           <div class="social-icons">
-            <a href="#" class="social-icon" aria-label="Telegram">
-              <img src="images/TG.png" alt="Telegram" />
-            </a>
-            <a href="#" class="social-icon" aria-label="ВКонтакте">
-              <img src="images/vk.png" alt="ВКонтакте" />
-            </a>
+           <a href="#" class="social-icon" aria-label="Telegram">
+           <img src="images/tg-icon.svg" alt="Telegram" />
+          </a>
+           <a href="#" class="social-icon" aria-label="ВКонтакте">
+           <img src="images/vk-icon.svg" alt="ВКонтакте" />
+          </a>
           </div>
         </div>
 
         <div class="footer-section-newsletter">
           <h4 class="newsletter-title">Подпишись на наши акции:</h4>
-          <form class="newsletter-form" id="subscribeForm">
+          <form class="newsletter-form" id="user-signup-form">
             <div class="newsletter-container">
               <input class="email-input" type="email" id="footer-email" name="email" placeholder="Email..." required/>
               <button type="submit" class="subscribe-btn">| Подписаться</button>
@@ -64,9 +64,15 @@
         <nav class="footer-section-links-section">
           <h4 class="links-title">Быстрые ссылки</h4>
           <ul class="footer-links-list">
-            <li><a href="#" class="footer-link">Главная</a></li>
-            <li><a href="#" class="footer-link">Магазин</a></li>
-            <li><a href="#" class="footer-link">Контакты</a></li>
+            <li>
+              <a href="#" class="footer-link">Главная</a>
+            </li>
+            <li>
+              <a href="#" class="footer-link">Магазин</a>
+            </li>
+            <li>
+              <a href="#" class="footer-link">Контакты</a>
+            </li>
           </ul>
         </nav>
       </div>
@@ -75,6 +81,8 @@
         <p class="copyright-text">www.product-cards.com©all rights reserved</p>
       </div>
     </footer>
+
+    <div class="overlay" id="overlay"></div>
 
     <script src="homework-9.js"></script>
   </body>

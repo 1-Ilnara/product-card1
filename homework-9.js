@@ -1,38 +1,36 @@
 let user = null;
 
-const subscribeForm = document.getElementById('subscribeForm');
+const signupForm = document.getElementById('user-signup-form');
 
-subscribeForm.addEventListener('submit', (e) => {
+signupForm.addEventListener('submit', (e) => {
     e.preventDefault();
     
-    const emailInput = subscribeForm.querySelector('input[type="email"]');
-    const emailValue = emailInput.value.trim();
+    const formData = new FormData(signupForm);
+    const emailValue = formData.get('email');
     
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     
-    if (!emailValue) {
+    if (!emailValue || !emailValue.trim()) {
         alert("Поле email не заполнено!");
         return;
     }
     
-    if (!emailPattern.test(emailValue)) {
+    if (!emailPattern.test(emailValue.trim())) {
         alert("Введите корректный email адрес!");
         return; 
     }
 
-    console.log({ email: emailValue });
+    console.log({ email: emailValue.trim() });
     
-    subscribeForm.reset();
+    signupForm.reset();
 });
 
-const modal = document.getElementById('registrationModal');
-const openModalBtn = document.getElementById('openModal');
+const modal = document.getElementById('registration-modal');
+const openModalBtn = document.getElementById('open-modal');
 const closeModalBtn = document.querySelector('.close');
-const registrationForm = document.getElementById('registrationForm');
+const registrationForm = document.getElementById('registration-form');
+const overlay = document.getElementById('overlay');
 
-const overlay = document.createElement('div');
-overlay.className = 'overlay';
-document.body.appendChild(overlay);
 
 openModalBtn.addEventListener('click', () => {
     modal.classList.add('modal-showed');
@@ -52,7 +50,7 @@ registrationForm.addEventListener('submit', (e) => {
     e.preventDefault();
 
     const password = document.getElementById('password').value;
-    const confirmPassword = document.getElementById('confirmPassword').value;
+    const confirmPassword = document.getElementById('confirm-password').value;
 
     if (password !== confirmPassword) {
         alert('Регистрация отклонена: пароли не совпадают!');
@@ -67,7 +65,7 @@ registrationForm.addEventListener('submit', (e) => {
     const formData = new FormData(registrationForm);
     const userData = Object.fromEntries(formData.entries());
 
-    delete userData.confirmPassword;
+    delete userData['confirm-password'];
 
     userData.createdOn = new Date();
 
