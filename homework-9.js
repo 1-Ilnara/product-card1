@@ -26,13 +26,13 @@ signupForm.addEventListener('submit', (e) => {
 });
 
 const modal = document.getElementById('registration-modal');
-const openModalBtn = document.getElementById('open-modal');
-const closeModalBtn = document.querySelector('.close');
+const modalOpenBtn = document.getElementById('open-modal');
+const modalCloseBtn = document.querySelector('.close');
 const registrationForm = document.getElementById('registration-form');
 const overlay = document.getElementById('overlay');
 
 
-openModalBtn.addEventListener('click', () => {
+modalOpenBtn.addEventListener('click', () => {
     modal.classList.add('modal-showed');
     overlay.style.display = 'block'; 
 });
@@ -43,7 +43,7 @@ const closeModal = () => {
     registrationForm.reset();
 };
 
-closeModalBtn.addEventListener('click', closeModal);
+modalCloseBtn.addEventListener('click', closeModal);
 overlay.addEventListener('click', closeModal); 
 
 registrationForm.addEventListener('submit', (e) => {
