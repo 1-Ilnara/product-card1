@@ -1,4 +1,137 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat';
+    color: #515076;
+    font-weight: 400; 
+    font-size: 12px;
+}
 
+.page-layout { 
+    width: 1110px;
+    margin: 0 auto;
+}
+
+.header-container { 
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 697px; 
+    background:url('images/dandelions.png') center/cover no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    z-index: 1; 
+}
+
+.main-title { 
+    font-weight: 400;
+    font-size: 70px;
+    line-height: 78px;
+    margin-bottom: 110px;
+}
+
+.cards-container-box { 
+    width: 1110px;
+    margin: 0 auto;
+    display: flex;
+    gap: 36px;
+    justify-content: center;
+    flex-wrap: wrap;
+    /* УДАЛИТЕ ЭТО: top: 408px; */
+    /* УДАЛИТЕ ЭТО: position: relative; */
+    
+    /* ДОБАВЬТЕ ЭТО: */
+    margin-top: -200px; /* Если нужно, чтобы карточки «наползали» на хедер */
+    padding-bottom: 50px; /* Отступ до футера */
+    z-index: 2;
+    background-color: white;
+}
+
+.card-container {
+    width: 340px;   
+    display: flex;
+    flex-direction: column;
+    height: 573px;
+    padding: 25px;
+    background-color: #F7F7FA;
+    box-shadow: 2px 2px 10px 0px #5150761A;
+    
+}
+
+.product-category {
+    font-size: 12px;
+    line-height: 24px;
+    text-transform: uppercase;
+    color: #A5A3B9;
+    margin-top: 30px; 
+    margin-bottom: 5px;
+    display: block;
+}
+
+.product-name {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 27px;
+    margin-bottom: 5px;
+}
+
+.product-description {
+    margin-bottom: 15px;
+}
+
+.composition-title { 
+    display: block;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.product-composition-list { 
+    list-style: circle;
+    margin-bottom: 25px;
+}
+
+.composition-item { 
+    margin-left: 14px;
+}
+
+.product-price-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.price-label { 
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+}
+
+.price-value { 
+    font-size: 20px;
+    line-height: 24px;
+}
+
+
+.btn-style {
+    padding: 10px;
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+.text-white {
+    color: white;
+}
+
+.bg-blue {
+    background-color: blue;
+}
+
+.bg-red {
+    background-color: red;
+}
 * {
     margin: 0;
     padding: 0;
@@ -90,10 +223,9 @@ input, button, textarea {
 
 .site-footer {
     width: 100%;
-    max-width: 1728px;
+    margin-top: 50px; 
     background: #3A3A3A;
     color: #FFFFFF;
-    margin: auto auto 0; 
     padding: 85px 84px 40px;
 }
 
@@ -113,11 +245,12 @@ input, button, textarea {
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 15px;
+    color:#f0f0f0
 }
 
 .slogan-text {
     font-size: 14px;
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(255, 255, 255, 0.956);
     line-height: 1.5;
     max-width: 250px;
 }
@@ -231,6 +364,10 @@ input, button, textarea {
 
 .footer-links-list {
     list-style: none;
+    color: white;
+}
+.links-title{
+    color:#e0e0e0;
 }
 
 .footer-links-list li {
@@ -259,4 +396,3 @@ input, button, textarea {
     font-size: 16px;
     color: rgba(255, 255, 255, 0.5);
 }
-
