@@ -17,6 +17,5 @@ class Dog extends Animal {
   }
 }
 
-// Side-effect: при импорте этого файла в консоли сразу появится сообщение
 const myDog = new Dog('Бобик', 'Овчарка');
 myDog.makeSound();

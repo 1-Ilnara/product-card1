@@ -1,4 +1,3 @@
-import './homework-4.js';
 import './homework-5.js'; 
 import './homework-6.js';
 import './homework-7.js';
@@ -6,31 +5,35 @@ import './homework-8.js';
 import './homework-9.js';
 import './products.js';
 import './script.js';  
-import './structure.js';
-import { Homework4 } from './homework-4.js'; 
+import './Animal.js';
 import { Modal } from './modal.js';
 import { Form } from './form.js';
 
-// Инициализация
-const contactModal = new Modal('myModal');
-const contactForm = new Form('myForm');
+const handleSubmit = (e) => {
+    if (contactForm.isValid()) {
+        console.log("Данные:", contactForm.getValues());
+        alert("Успех!");
+        contactForm.reset();
+        contactModal.close();
+    } else {
+        alert("Ошибка валидации");
+    }
+};
 
+const contactModal = new Modal('myModal');
+const contactForm = new Form('myForm', handleSubmit); 
 const openBtn = document.getElementById('openBtn');
 
+const handleOpen = () => contactModal.open();
+
 if (openBtn) {
-    openBtn.onclick = () => contactModal.open();
+    openBtn.addEventListener('click', handleOpen);
 }
 
-if (contactForm.form) {
-    contactForm.form.onsubmit = (e) => {
-        e.preventDefault();
-        if (contactForm.isValid()) {
-            console.log("Данные:", contactForm.getValues());
-            alert("Успех!");
-            contactForm.reset();
-            contactModal.close();
-        } else {
-            alert("Ошибка валидации");
-        }
-    };
-}
+const removeEventListeners = () => {
+    openBtn?.removeEventListener('click', handleOpen);
+    contactModal.destroy();
+    contactForm.destroy();
+};
+
+export { removeEventListeners };

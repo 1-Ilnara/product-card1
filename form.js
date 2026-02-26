@@ -1,6 +1,9 @@
 export class Form {
-  constructor(id) {
+  constructor(id, onSubmitCallback) {
     this.form = document.getElementById(id);
+    this.onSubmitCallback = onSubmitCallback;
+    this.handleFormSubmit = this.handleSubmit.bind(this);
+    this.init();
   }
 
   getValues() {
@@ -14,5 +17,24 @@ export class Form {
 
   reset() {
     this.form.reset();
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    if (this.onSubmitCallback) {
+      this.onSubmitCallback(e);
+    }
+  }
+
+  init() {
+    if (this.form) {
+      this.form.addEventListener('submit', this.handleFormSubmit);
+    }
+  }
+
+  destroy() {
+    if (this.form) {
+      this.form.removeEventListener('submit', this.handleFormSubmit);
+    }
   }
 }

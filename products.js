@@ -12,6 +12,7 @@ export const products = [
     ],
     price: 2750,
   },
+
   {
     id: 2,
     img: "mask",
@@ -25,6 +26,7 @@ export const products = [
       ],
     price: 3500,
   },
+
   {
     id: 3,
     img: "gel",
@@ -38,6 +40,7 @@ export const products = [
     ],
     price: 1650,
   },
+
   {
     id: 4,
     img: "gift-set-1",
@@ -51,6 +54,7 @@ export const products = [
     ],
     price: 4750,
   },
+  
   {
     id: 5,
     img: "gift-set-5",

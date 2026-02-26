@@ -2,7 +2,7 @@ export class Modal {
   constructor(id) {
     this.modal = document.getElementById(id);
     this.closeBtn = this.modal.querySelector('.close-btn');
-    
+    this.handleCloseClick = this.close.bind(this);
     this.init();
   }
 
@@ -19,6 +19,14 @@ export class Modal {
   }
 
   init() {
-    this.closeBtn.addEventListener('click', () => this.close());
+    if (this.closeBtn) {
+      this.closeBtn.addEventListener('click', this.handleCloseClick);
+    }
+  }
+
+  destroy() {
+    if (this.closeBtn) {
+      this.closeBtn.removeEventListener('click', this.handleCloseClick);
+    }
   }
 }
