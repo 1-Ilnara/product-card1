@@ -47,14 +47,13 @@ body {
     box-shadow: none; 
     padding-bottom: 50px;
 }
+
 .main-title {
     font-weight: 400;
     font-size: 70px;
     line-height: 78px;
     margin-bottom: 110px;
 }
-
-
 
 .card-container {
     width: 340px;
@@ -63,6 +62,7 @@ body {
     background-color: #F7F7FA;
     box-shadow: 2px 2px 10px 0px #5150761A;
 }
+
 .product-category {
     font-size: 12px;
     line-height: 24px;

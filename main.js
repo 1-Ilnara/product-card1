@@ -5,7 +5,7 @@ import './homework-8.js';
 import './homework-9.js';
 import './products.js';
 import './script.js';  
-import './Animal.js';
+import './Creatures.js';
 import { Modal } from './modal.js';
 import { Form } from './form.js';
 
@@ -30,10 +30,3 @@ if (openBtn) {
     openBtn.addEventListener('click', handleOpen);
 }
 
-const removeEventListeners = () => {
-    openBtn?.removeEventListener('click', handleOpen);
-    contactModal.destroy();
-    contactForm.destroy();
-};
-
-export { removeEventListeners };

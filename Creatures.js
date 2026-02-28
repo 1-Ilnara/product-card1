@@ -1,4 +1,4 @@
-class Animal {
+class Creatures {
   constructor(name) {
     this.name = name;
   }
@@ -7,7 +7,7 @@ class Animal {
   }
 }
 
-class Dog extends Animal {
+class Dog extends Creatures {
   constructor(name, breed) {
     super(name);
     this.breed = breed;
