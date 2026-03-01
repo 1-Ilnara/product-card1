@@ -32,9 +32,15 @@ export class Form {
     }
   }
 
+
+
   destroy() {
     if (this.form) {
       this.form.removeEventListener('submit', this.handleFormSubmit);
     }
   }
 }
+
+
+
+

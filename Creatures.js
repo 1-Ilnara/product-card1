@@ -19,3 +19,6 @@ class Dog extends Creatures {
 
 const myDog = new Dog('Бобик', 'Овчарка');
 myDog.makeSound();
+
+
+
