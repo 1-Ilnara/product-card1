@@ -7,7 +7,7 @@ import './products.js';
 import './script.js';  
 import './Creatures.js';
 import { Modal } from './modal.js';
-import { Form } from './form.js';
+import { Form } from './Form.js';
 
 const handleSubmit = (e) => {
     if (contactForm.isValid()) {
@@ -29,5 +29,9 @@ const handleOpen = () => contactModal.open();
 if (openBtn) {
     openBtn.addEventListener('click', handleOpen);
 }
+
+
+
+
 
 
