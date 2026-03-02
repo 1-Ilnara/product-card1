@@ -5,10 +5,9 @@ import './homework-8.js';
 import './homework-9.js';
 import './products.js';
 import './script.js';  
-import './Creatures.js';
+import './Creature.js';
 import { Modal } from './Modal.js';
-import { Form } from './Form.js';   
-
+import { Form } from '.Form.js';
 const handleSubmit = (e) => {
     if (contactForm.isValid()) {
         console.log("Данные:", contactForm.getValues());
