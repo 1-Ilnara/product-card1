@@ -5,9 +5,9 @@ import './homework-8.js';
 import './homework-9.js';
 import './products.js';
 import './script.js';  
-import './Creature.js';
-import { Modal } from './Modal.js';
-import { Form } from '.Form.js';
+import { Dog } from "./Creature.js";
+import { Modal } from "/Modal.js";
+import { Form } from "/Form.js";
 const handleSubmit = (e) => {
     if (contactForm.isValid()) {
         console.log("Данные:", contactForm.getValues());
@@ -21,6 +21,10 @@ const handleSubmit = (e) => {
 
 const contactModal = new Modal('myModal');
 const contactForm = new Form('myForm', handleSubmit); 
+const myDog = new Dog("Бобик", "Овчарка");
+myDog.makeSound();
+
+
 const openBtn = document.getElementById('openBtn');
 
 const handleOpen = () => contactModal.open();
@@ -28,6 +32,10 @@ const handleOpen = () => contactModal.open();
 if (openBtn) {
     openBtn.addEventListener('click', handleOpen);
 }
+
+
+
+
 
 
 

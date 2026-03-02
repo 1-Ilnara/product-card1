@@ -6,8 +6,7 @@ class Creature {
     console.log(`${this.name} издает звук`);
   }
 }
-
-class Dog extends Creatures {
+class Dog extends Creature {
   constructor(name, breed) {
     super(name);
     this.breed = breed;
@@ -16,9 +15,8 @@ class Dog extends Creatures {
     console.log(`${this.name} (${this.breed}) гавкает!`);
   }
 }
+export { Creature, Dog };
 
-const myDog = new Dog('Бобик', 'Овчарка');
-myDog.makeSound();
 
 
 
