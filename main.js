@@ -22,6 +22,10 @@ const handleSubmit = (e) => {
 
 const contactModal = new Modal('myModal');
 const contactForm = new Form('myForm', handleSubmit); 
+const myDog = new Dog("Бобик", "Овчарка");
+myDog.makeSound();
+
+
 const openBtn = document.getElementById('openBtn');
 
 const handleOpen = () => contactModal.open();
@@ -29,5 +33,13 @@ const handleOpen = () => contactModal.open();
 if (openBtn) {
     openBtn.addEventListener('click', handleOpen);
 }
+
+
+
+
+
+
+
+
 
 
