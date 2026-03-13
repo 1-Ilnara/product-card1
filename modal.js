@@ -22,3 +22,5 @@ export class Modal {
     this.closeBtn?.removeEventListener("click", this.handleCloseClick);
   }
 }
+
+
