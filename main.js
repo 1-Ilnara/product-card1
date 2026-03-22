@@ -6,8 +6,8 @@ import './homework-9.js';
 import './products.js';
 import './script.js';  
 import './Creatures.js';
-import { Modal } from './modal.js';
-import { Form } from './form.js';
+import { Modal } from '../Modal.js';
+import { Form } from '../Form.js';
 
 const handleSubmit = (e) => {
     if (contactForm.isValid()) {
@@ -22,6 +22,10 @@ const handleSubmit = (e) => {
 
 const contactModal = new Modal('myModal');
 const contactForm = new Form('myForm', handleSubmit); 
+const myDog = new Dog("Бобик", "Овчарка");
+myDog.makeSound();
+
+
 const openBtn = document.getElementById('openBtn');
 
 const handleOpen = () => contactModal.open();
@@ -29,5 +33,13 @@ const handleOpen = () => contactModal.open();
 if (openBtn) {
     openBtn.addEventListener('click', handleOpen);
 }
+
+
+
+
+
+
+
+
 
 
