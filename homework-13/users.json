@@ -1,0 +1,49 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Брэд",
+      "surname": "Питт",
+      "email": "brad.pitt@gmail.com",
+      "age": 24,
+      "city": "Киев",
+      "phone": "+380 (99) 111-11-11"
+    },
+    {
+      "id": 2,
+      "name": "Анджелина",
+      "surname": "Джоли",
+      "email": "angelina.jolie@gmail.com",
+      "age": 27,
+      "city": "Львов",
+      "phone": "+380 (99) 222-22-22"
+    },
+    {
+      "id": 3,
+      "name": "Леонардо",
+      "surname": "Ди Каприо",
+      "email": "leonardo.dicaprio@gmail.com",
+      "age": 31,
+      "city": "Одесса",
+      "phone": "+380 (99) 333-33-33"
+    },
+    {
+      "id": 4,
+      "name": "Натали",
+      "surname": "Портман",
+      "email": "natalie.portman@gmail.com",
+      "age": 29,
+      "city": "Харьков",
+      "phone": "+380 (99) 444-44-44"
+    },
+    {
+      "id": 5,
+      "name": "Том",
+      "surname": "Хэнкс",
+      "email": "tom.hanks@gmail.com",
+      "age": 35,
+      "city": "Днепр",
+      "phone": "+380 (99) 555-55-55"
+    }
+  ]
+}
