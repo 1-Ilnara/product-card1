@@ -11,8 +11,8 @@
     <h1>Список пользователей</h1>
 
     <div class="controls">
-        <button id="getAllBtn">Получить всех</button>
-        <button id="deleteAllBtn">Удалить всех</button>
+        <button id="get-all-btn">Получить всех</button>
+        <button id="delete-all-btn">Удалить всех</button>
     </div>
 
     <div id="status"></div>
@@ -20,10 +20,25 @@
     <template id="user-template">
         <div class="card">
             <h3 class="user-full-name"></h3>
-            <p><b>Возраст:</b> <span class="user-age"></span></p>
-            <p><b>Email:</b> <span class="user-email"></span></p>
-            <p><b>Город:</b> <span class="user-city"></span></p>
-            <p><b>Тел:</b> <span class="user-phone"></span></p>
+            <p>
+    <b>Возраст:</b> 
+    <span class="user-age"></span>
+</p>
+
+<p>
+    <b>Email:</b> 
+    <span class="user-email"></span>
+</p>
+
+<p>
+    <b>Город:</b> 
+    <span class="user-city"></span>
+</p>
+
+<p>
+    <b>Тел:</b> 
+    <span class="user-phone"></span>
+</p>
             <button class="delete-card-btn">Удалить пользователя</button>
         </div>
     </template>

@@ -1,7 +1,7 @@
 const statusEl = document.getElementById('status');
 const container = document.getElementById('container');
-const getAllBtn = document.getElementById('getAllBtn');
-const deleteAllBtn = document.getElementById('deleteAllBtn');
+const getAllBtn = document.getElementById('get-all-btn');
+const deleteAllBtn = document.getElementById('delete-all-btn');
 
 const STORAGE_KEY = 'users-db';
 
