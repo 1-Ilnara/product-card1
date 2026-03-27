@@ -1,48 +1,47 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Async Users Database</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <h1>Список пользователей</h1>
 
     <div class="controls">
-        <button id="get-all-btn">Получить всех</button>
-        <button id="delete-all-btn">Удалить всех</button>
+      <button id="get-all-btn">Получить всех</button>
+      <button id="delete-all-btn">Удалить всех</button>
     </div>
 
     <div id="status"></div>
     <div id="container"></div>
     <template id="user-template">
-        <div class="card">
-            <h3 class="user-full-name"></h3>
-            <p>
-    <b>Возраст:</b> 
-    <span class="user-age"></span>
-</p>
+      <div class="card">
+        <h3 class="user-full-name"></h3>
+        <p>
+          <b>Возраст:</b>
+          <span class="user-age"></span>
+        </p>
 
-<p>
-    <b>Email:</b> 
-    <span class="user-email"></span>
-</p>
+        <p>
+          <b>Email:</b>
+          <span class="user-email"></span>
+        </p>
 
-<p>
-    <b>Город:</b> 
-    <span class="user-city"></span>
-</p>
+        <p>
+          <b>Город:</b>
+          <span class="user-city"></span>
+        </p>
 
-<p>
-    <b>Тел:</b> 
-    <span class="user-phone"></span>
-</p>
-            <button class="delete-card-btn">Удалить пользователя</button>
-        </div>
+        <p>
+          <b>Тел:</b>
+          <span class="user-phone"></span>
+        </p>
+        <button class="delete-card-btn">Удалить пользователя</button>
+      </div>
     </template>
 
     <script src="async.js"></script>
-</body>
+  </body>
 </html>
